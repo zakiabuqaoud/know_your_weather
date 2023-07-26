@@ -2,6 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:know_your_weather/constants.dart';
+import 'package:know_your_weather/screens/drop_down_screen.dart';
+import 'package:know_your_weather/screens/loading_screen.dart';
 
 import '../services/weather.dart';
 
@@ -68,7 +70,9 @@ class LocationScreenState extends State<LocationScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=>const LoadingScreen(),),);
+                      },
                       child: const Icon(
                         Icons.near_me,
                         size: 50.0,
@@ -76,7 +80,9 @@ class LocationScreenState extends State<LocationScreen> {
                       ),
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=> const DropDownScreen()));
+                      },
                       child: const Icon(
                         Icons.location_city,
                         size: 50.0,
